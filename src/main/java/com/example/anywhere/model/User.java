@@ -2,7 +2,8 @@ package com.example.anywhere.model;
 
 import javax.persistence.*;
 
-@Entity(name = "USERS")
+@Entity
+@Table(name = "USERS")
 public class User {
 
     @Id
