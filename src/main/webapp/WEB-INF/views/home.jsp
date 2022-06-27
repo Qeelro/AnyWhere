@@ -22,7 +22,6 @@
 
     </c:forEach>
 
-    <p> ${event.getName()} </p>
 </section>
 </body>
 </html>
