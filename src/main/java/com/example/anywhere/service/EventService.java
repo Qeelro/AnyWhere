@@ -4,6 +4,8 @@ import com.example.anywhere.model.Event;
 import com.example.anywhere.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EventService {
 
@@ -16,6 +18,10 @@ public class EventService {
 
     public Event saveEvent(Event event) {
         return eventRepository.save(event);
+    }
+
+    public List<Event> getAllEvent() {
+        return eventRepository.findAll();
     }
 
     public void saveEditEvent(Event event) {

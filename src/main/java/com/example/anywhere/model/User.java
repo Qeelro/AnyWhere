@@ -10,7 +10,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "NICK_NAME", length = 15)
+    @Column(name = "NICK_NAME")
     private String nickName;
 
     @Column(name = "EMAIL")
@@ -71,5 +71,10 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User : " + nickName;
     }
 }
