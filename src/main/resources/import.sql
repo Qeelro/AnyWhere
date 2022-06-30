@@ -9,31 +9,35 @@ INSERT INTO users VALUES (8, 'preston61@yahoo.com', 'MuttonChops', 'hVfK$^Vgd%xZ
 INSERT INTO users VALUES (9, 'jarrell_kuhic@gmail.com', 'CitarNosis', 'HdNY7ZS8AtU$', 'admin');
 INSERT INTO users VALUES (10, 'zoe43@gmail.com', 'Margary', 'UDmNTCk$8&LX', 'moderator');
 
-INSERT INTO event VALUES (1, 0, '2018-7-04', 'Drift', 4);
-INSERT INTO event VALUES (2, 10, '2020-3-16', 'BBQ', 6);
-INSERT INTO event VALUES (3, 5, '2021-9-30', 'Spring Boot', 10);
-INSERT INTO event VALUES (4, 2, '2022-2-19', 'Dyno Test', 4);
-INSERT INTO event VALUES (5, 2, '2022-12-11', 'Spring Boot', 10);
+INSERT INTO event VALUES (1, 0, '2018-7-07', '2018-7-07', 'Opis', 'Drift', 4);
 
-INSERT INTO happening VALUES (1, 'sample text', 3, 4)
-INSERT INTO happening VALUES (2, 'sample text', 3, 4)
-INSERT INTO happening VALUES (3, 'sample text', 3, 4)
-INSERT INTO happening VALUES (4, 'sample text', 3, 4)
-INSERT INTO happening VALUES (5, 'sample text', 3, 4)
-INSERT INTO happening VALUES (6, 'sample text', 3, 4)
-INSERT INTO happening VALUES (7, 'sample text', 3, 4)
-INSERT INTO happening VALUES (8, 'sample text', 3, 4)
-INSERT INTO happening VALUES (9, 'sample text', 3, 4)
-INSERT INTO happening VALUES (10, 'sample text', 3, 4)
-INSERT INTO happening VALUES (11, 'sample text', 3, 4)
-INSERT INTO happening VALUES (12, 'sample text', 3, 4)
-INSERT INTO happening VALUES (13, 'sample text', 3, 4)
-INSERT INTO happening VALUES (14, 'sample text', 3, 4)
-INSERT INTO happening VALUES (15, 'sample text', 3, 4)
-INSERT INTO happening VALUES (16, 'sample text', 3, 4)
-INSERT INTO happening VALUES (17, 'sample text', 3, 4)
-INSERT INTO happening VALUES (18, 'sample text', 3, 4)
-INSERT INTO happening VALUES (19, 'sample text', 3, 4)
-INSERT INTO happening VALUES (20, 'sample text', 3, 4)
+INSERT INTO event VALUES (2, 10, '2020-3-22', '2020-3-16', 'Opis', 'BBQ', 6);
+
+INSERT INTO event VALUES (3, 5, '2021-9-30', '2021-9-30', 'Opis', 'Spring Boot', 10);
+
+INSERT INTO event VALUES (4, 2, '2022-2-19', '2022-2-19', 'Opis', 'Dyno Test', 4);
+
+INSERT INTO event VALUES (5, 2, '2022-12-11', '2022-12-13', 'Opis', 'Spring Boot', 10);
+
+INSERT INTO happening VALUES (1, 'sample text', 3, 4);
+INSERT INTO happening VALUES (2, 'sample text', 3, 4);
+INSERT INTO happening VALUES (3, 'sample text', 3, 4);
+INSERT INTO happening VALUES (4, 'sample text', 3, 4);
+INSERT INTO happening VALUES (5, 'sample text', 3, 4);
+INSERT INTO happening VALUES (6, 'sample text', 3, 4);
+INSERT INTO happening VALUES (7, 'sample text', 3, 4);
+INSERT INTO happening VALUES (8, 'sample text', 3, 4);
+INSERT INTO happening VALUES (9, 'sample text', 3, 4);
+INSERT INTO happening VALUES (10, 'sample text', 3, 4);
+INSERT INTO happening VALUES (11, 'sample text', 3, 4);
+INSERT INTO happening VALUES (12, 'sample text', 3, 4);
+INSERT INTO happening VALUES (13, 'sample text', 3, 4);
+INSERT INTO happening VALUES (14, 'sample text', 3, 4);
+INSERT INTO happening VALUES (15, 'sample text', 3, 4);
+INSERT INTO happening VALUES (16, 'sample text', 3, 4);
+INSERT INTO happening VALUES (17, 'sample text', 3, 4);
+INSERT INTO happening VALUES (18, 'sample text', 3, 4);
+INSERT INTO happening VALUES (19, 'sample text', 3, 4);
+INSERT INTO happening VALUES (20, 'sample text', 3, 4);
 
 commit;

@@ -5,23 +5,22 @@ import com.example.anywhere.service.EventService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class HomeController {
+public class EventController {
 
     private EventService eventService;
 
-    public HomeController(EventService eventService) {
+    public EventController(EventService eventService) {
         this.eventService = eventService;
     }
 
-    @GetMapping("/")
-    public String getHome(Model model) {
-        List<Event> eventList = eventService.getAllEvent();
-        model.addAttribute("event", eventList);
-        return "home";
+    @GetMapping("/event/{id}")
+    public String getEvent(@PathVariable("id") Long id, Model model) {
+        Event event = eventService.getEventById(id);
+        model.addAttribute("event", event);
+        return "event";
     }
 
 }
