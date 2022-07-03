@@ -1,6 +1,7 @@
 package com.example.anywhere.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USERS")
@@ -21,6 +22,9 @@ public class User {
 
     @Column(name = "ROLE")
     private String role;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    List<Event> eventList;
 
     public User() {
     }
@@ -73,8 +77,12 @@ public class User {
         this.role = role;
     }
 
+    public List<Event> getEvents() {
+        return eventList;
+    }
+
     @Override
     public String toString() {
-        return "User : " + nickName;
+        return nickName;
     }
 }

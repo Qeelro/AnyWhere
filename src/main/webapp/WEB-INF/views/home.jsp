@@ -10,18 +10,18 @@
     <title>AnyWhere</title>
 </head>
 <section>
-    <c:forEach items="${event}" var="example">
+    <c:forEach items="${event}" var="event">
 
         <table>
-            <li>${example.nameEvent}</li>
-            <li>${example.date}</li>
-            <li>counter :${example.counter}</li>
-            <li>${example.user}</li>
+            <li><a href="/event/${event.getId()}">${event.nameEvent}</a></li>
+            <li>Data wydarzenia : ${event.dateStart} / ${event.dateEnd}</li>
+            <li>Data wydarzenia : ${event.description}</li>
+            <li>Liczba osób zapisana do wydarzenia : ${event.counter}</li>
+            <li><a href="/user/${event.getUser().getId()}">${event.user}</a></li>
             <p></p>
         </table>
 
     </c:forEach>
-
 </section>
 </body>
 </html>
