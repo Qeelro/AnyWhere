@@ -11,7 +11,7 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private EventService eventService;
+    private final EventService eventService;
 
     public HomeController(EventService eventService) {
         this.eventService = eventService;
