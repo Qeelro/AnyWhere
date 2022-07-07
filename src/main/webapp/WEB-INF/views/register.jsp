@@ -7,13 +7,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>${event.getNameEvent()} by ${event.getUser()}</title>
+    <title>Register AnyWhere</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">AnyWhere</a>
@@ -43,25 +42,21 @@
         </div>
     </div>
 </nav>
-<div class="container my-5">
-    <div class="row">
-        <div class="card" style="width:350px">
-            <a href="/event/${event.getId()}"><img class="card-img-top"
-                                                   src='<c:url value="/resources/img/img_avatar1.png"/>'
-                                                   alt="Card image"></a>
-            <div class="card-body">
-                <h4 class="card-title">${event.nameEvent} by ${event.getUser()}</h4>
-                <p class="card-text">${event.description}</p>
-                <p class="card-text">${event.counter}</p>
-                <p class="card-text">${event.dateStart} / ${event.dateEnd}</p>
-
-                <a href="/editEvent/${event.getId()}" class="btn btn-outline-primary">Edit Event</a>
-            </div>
-
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-        </div>
+<form class="user" method="post" action='<c:url value="/register"/>'>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Nick:</label>
+        <input type="text" class="form-control" id="nickName" maxlength="50" placeholder="Enter nick" name="nickName">
     </div>
-</div>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" minlength="8" maxlength="30" placeholder="Enter password" name="password" required>
+    </div>
+    <input type="text" class="form-control" name="role" placeholder="User" value="user" readonly>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </body>
 </html>

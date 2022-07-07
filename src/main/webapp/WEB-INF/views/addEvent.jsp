@@ -1,19 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>${event.getNameEvent()} by ${event.getUser()}</title>
+    <title>AnyWhere - Add Event</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">AnyWhere</a>
@@ -46,20 +44,35 @@
 <div class="container my-5">
     <div class="row">
         <div class="card" style="width:350px">
-            <a href="/event/${event.getId()}"><img class="card-img-top"
-                                                   src='<c:url value="/resources/img/img_avatar1.png"/>'
-                                                   alt="Card image"></a>
+            <img class="card-img-top"
+                 src='<c:url value="/resources/img/img_avatar1.png"/>'
+                 alt="Card image">
             <div class="card-body">
-                <h4 class="card-title">${event.nameEvent} by ${event.getUser()}</h4>
-                <p class="card-text">${event.description}</p>
-                <p class="card-text">${event.counter}</p>
-                <p class="card-text">${event.dateStart} / ${event.dateEnd}</p>
-
-                <a href="/editEvent/${event.getId()}" class="btn btn-outline-primary">Edit Event</a>
+                <form method="post" action='<c:url value="/addEvent"/>'>
+                    <h4 class="card-title">
+                        <label for="nameEvent"></label>
+                        <input class="form-control" rows="1" id="nameEvent" name="nameEvent" minlength="10"
+                               placeholder="Event Name"></input></h4>
+                    <p class="card-text"><textarea class="form-control" rows="10" name="description" minlength="20"
+                                                   placeholder="Opis eventu"></textarea></p>
+                    <p class="card-text">
+                        <label for="start">Start date:</label>
+                        <input type="date" id="start"
+                               name="dateStart"
+                               value="2018-07-22"></p>
+                    <p class="card-text">
+                        <label for="end">End date:</label>
+                        <input type="date" id="end" name="dateEnd"
+                               value="2018-07-22">
+                    </p>
+<%--                    <p class="card-text">--%>
+<%--                        <label for="tentacles">User Id</label>--%>
+<%--                        <input type="number" id="tentacles" name="user"--%>
+<%--                               min="1" max="10">--%>
+<%--                    </p>--%>
+                    <input class="btn btn-outline-primary" type="submit" value="Wyślij"></input>
+                </form>
             </div>
-
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
         </div>
     </div>
 </div>

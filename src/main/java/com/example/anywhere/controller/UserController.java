@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Optional;
+
 @Controller
 public class UserController {
 
@@ -18,8 +20,9 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     public String getUser(@PathVariable("id") Long id, Model model) {
-        User user = userService.getUserById(id);
-        model.addAttribute("user", user);
+        Optional<User> user = userService.getUserById(id);
+        model.addAttribute("user", user.orElseThrow());
+        System.out.println(user);
         return "user";
     }
 

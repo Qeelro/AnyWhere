@@ -13,7 +13,7 @@ public class Happening {
     private String text;
 
 
-    @OneToOne
+    @ManyToOne
     private Event event;
 
     @ManyToOne
@@ -59,5 +59,15 @@ public class Happening {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Happening{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", event=" + event +
+                ", user=" + user +
+                '}';
     }
 }
