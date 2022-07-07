@@ -4,6 +4,8 @@ import com.example.anywhere.model.User;
 import com.example.anywhere.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -25,7 +27,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public Optional<User> getUserById(Long id) {
+    public Optional <User> getUserById(Long id) {
         return userRepository.findById(id);
     }
 }

@@ -2,6 +2,8 @@ package com.example.anywhere.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Event {
@@ -17,13 +19,16 @@ public class Event {
     private String description;
 
     @Column(name = "DATE_START")
-    private LocalDate dateStart;
+    private String dateStart;
 
     @Column(name = "DATE_END")
-    private LocalDate dateEnd;
+    private String dateEnd;
 
     @Column(name = "COUNTER")
     private Long counter;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event")
+    List<Happening> happeningList;
 
     @ManyToOne
     private User user;
@@ -31,7 +36,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(Long id, String nameEvent, String description, LocalDate dateStart, LocalDate dateEnd, Long counter,
+    public Event(Long id, String nameEvent, String description, String dateStart, String dateEnd, Long counter,
                  User user) {
         this.id = id;
         this.nameEvent = nameEvent;
@@ -66,19 +71,19 @@ public class Event {
         this.description = description;
     }
 
-    public LocalDate getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
-    public LocalDate getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(LocalDate dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 
@@ -96,6 +101,10 @@ public class Event {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Happening> getComments() {
+        return happeningList;
     }
 
     @Override
